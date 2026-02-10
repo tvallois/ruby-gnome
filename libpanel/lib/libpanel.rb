@@ -18,7 +18,7 @@ require "gtk4"
 
 require "libpanel/loader"
 
-module Adwaita
+module Panel
   LOG_DOMAIN = "Panel"
   GLib::Log.set_log_domain(LOG_DOMAIN)
 

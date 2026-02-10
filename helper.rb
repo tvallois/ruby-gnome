@@ -46,6 +46,7 @@ module Helper
     "gvlc",
     "libhandy",
     "libsecret",
+    "panel",
     "pango",
     "poppler",
     "rsvg2",
