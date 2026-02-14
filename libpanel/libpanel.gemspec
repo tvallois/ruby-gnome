@@ -19,7 +19,7 @@
 require_relative "../glib2/version"
 
 Gem::Specification.new do |s|
-  s.name          = "panel"
+  s.name          = "libpanel"
   s.summary       = "Ruby/Libpanel is a Ruby binding of Libpanel."
   s.description   = "Ruby/Libpanel is a Ruby binding of Libpanel."
   s.author        = "The Ruby-GNOME Project Team"
@@ -47,5 +47,5 @@ Gem::Specification.new do |s|
     s.requirements << "system: libpanel: #{platform}: #{package}"
   end
 
-  s.metadata["msys2_mingw_dependencies"] = "panel"
+  s.metadata["msys2_mingw_dependencies"] = "libpanel"
 end
