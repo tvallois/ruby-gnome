@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug glib2",
+            "program": "/home/thibault-vallois/.rbenv/versions/3.3.5/bin/ruby",
+            "args": ["test/run-test.rb", "test-callable-info"],
+            "cwd": "${workspaceFolder}/glib2"
+        },
+        {
+            "type": "rdbg",
+            "request": "launch",
+            "name": "Debug glib2 with rdbg",
+            "cwd": "${workspaceFolder}/glib2",
+            "useBundler": false,
+            "script": "${file}",
+            "args": ["test-repository"]
+        }
+    ]
+}

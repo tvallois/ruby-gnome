@@ -16,7 +16,7 @@
 
 class TestRegisteredTypeInfo < Test::Unit::TestCase
   def setup
-    @repository = GObjectIntrospection::Repository.default
+    @repository = GLib::GObjectIntrospection::Repository.default
     @repository.require("GObject")
     @info = @repository.find("GObject", "TypePlugin")
   end

@@ -16,14 +16,14 @@
 
 class TestArgInfo < Test::Unit::TestCase
   def setup
-    @repository = GObjectIntrospection::Repository.default
+    @repository = GLib::GObjectIntrospection::Repository.default
     @repository.require("GObject")
     @callable_info = @repository.find("GObject", "signal_name")
     @info = @callable_info.get_arg(0)
   end
 
   def test_direction
-    assert_equal(GObjectIntrospection::Direction::IN,
+    assert_equal(GLib::GObjectIntrospection::Direction::IN,
                  @info.direction)
   end
 
@@ -44,12 +44,12 @@ class TestArgInfo < Test::Unit::TestCase
   end
 
   def test_ownership_transfer
-    assert_equal(GObjectIntrospection::Transfer::NOTHING,
+    assert_equal(GLib::GObjectIntrospection::Transfer::NOTHING,
                  @info.ownership_transfer)
   end
 
   def test_scope
-    assert_equal(GObjectIntrospection::ScopeType::INVALID,
+    assert_equal(GLib::GObjectIntrospection::ScopeType::INVALID,
                  @info.scope)
   end
 
@@ -62,7 +62,7 @@ class TestArgInfo < Test::Unit::TestCase
   end
 
   def test_type
-    assert_kind_of(GObjectIntrospection::TypeInfo,
+    assert_kind_of(GLib::GObjectIntrospection::TypeInfo,
                    @info.type)
   end
 end

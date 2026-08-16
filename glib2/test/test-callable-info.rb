@@ -16,7 +16,7 @@
 
 class TestCallableInfo < Test::Unit::TestCase
   def setup
-    @repository = GObjectIntrospection::Repository.default
+    @repository = GLib::GObjectIntrospection::Repository.default
     @repository.require("GObject")
     @info = @repository.find("GObject", "signal_name")
   end
@@ -28,17 +28,17 @@ class TestCallableInfo < Test::Unit::TestCase
   end
 
   def test_return_type
-    assert_kind_of(GObjectIntrospection::TypeInfo,
+    assert_kind_of(GLib::GObjectIntrospection::TypeInfo,
                    @info.return_type)
   end
 
   def test_caller_owns
-    assert_equal(GObjectIntrospection::Transfer::NOTHING,
+    assert_equal(GLib::GObjectIntrospection::Transfer::NOTHING,
                  @info.caller_owns)
   end
 
   def test_may_return_null?
-    if GObjectIntrospection::Version.or_later?(1, 67, 0)
+    if GLib::GObjectIntrospection::Version.or_later?(1, 67, 0)
       assert do
         @info.may_return_null?
       end

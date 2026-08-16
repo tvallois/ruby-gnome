@@ -16,7 +16,7 @@
 
 class TestFunctionInfo < Test::Unit::TestCase
   def setup
-    @repository = GObjectIntrospection::Repository.default
+    @repository = GLib::GObjectIntrospection::Repository.default
     @repository.require("GObject")
     @info = @repository.find("GObject", "signal_name")
   end
@@ -26,7 +26,7 @@ class TestFunctionInfo < Test::Unit::TestCase
   end
 
   def test_flags
-    assert_equal(GObjectIntrospection::FunctionInfoFlags.new(0),
+    assert_equal(GLib::GObjectIntrospection::FunctionInfoFlags.new(0),
                  @info.flags)
   end
 

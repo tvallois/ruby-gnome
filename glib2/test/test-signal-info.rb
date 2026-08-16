@@ -18,7 +18,7 @@ class TestSignalInfo < Test::Unit::TestCase
   include GObjectIntrospectionTestUtils
 
   def setup
-    @repository = GObjectIntrospection::Repository.default
+    @repository = GLib::GObjectIntrospection::Repository.default
     @repository.require("Gio")
     @object_info = @repository.find("Gio", "Application")
     @info = @object_info.signals.find {|info| info.name == "startup"}
